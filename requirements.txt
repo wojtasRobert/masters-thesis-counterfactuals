@@ -8,3 +8,5 @@ tqdm
 imbalanced-learn
 joblib
 ipykernel
+tensorflow>=1.13.0-rc1 
+torch
