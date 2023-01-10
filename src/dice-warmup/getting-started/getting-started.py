@@ -50,7 +50,7 @@ categorical = x_train.columns.difference(numerical)
 categorical_transformer = Pipeline(steps=[('onehot', OneHotEncoder(handle_unknown='ignore'))])
 
 transformations = ColumnTransformer(transformers=[('cat', categorical_transformer, categorical)])
-
+print(transformations)
 clf = Pipeline(steps=[('preprocessor', transformations), ('classifier', RandomForestClassifier())])
 model = clf.fit(x_train, y_train)
 

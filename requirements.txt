@@ -1,8 +1,8 @@
 dice-ml
 jsonschema
-numpy
-pandas
-scikit-learn
+numpy~=1.21.6
+pandas~=1.3.5
+scikit-learn~=1.0.2
 h5py
 tqdm
 imbalanced-learn
@@ -10,3 +10,9 @@ joblib
 ipykernel
 tensorflow>=1.13.0-rc1 
 torch
+gurobipy~=10.0.0
+matplotlib~=3.5.3
+xgboost
+seaborn
+jupyter
+shap

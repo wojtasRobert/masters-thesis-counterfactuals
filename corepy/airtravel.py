@@ -13,7 +13,7 @@ class Flight:
         self._aircraft = aircraft
         rows, seats = self._aircraft.seating_plan()
         self._seating = [None] + \
-            [{letter: None for letter in seats} for _ in rows]
+                        [{letter: None for letter in seats} for _ in rows]
 
     def allocate_seat(self, seat, passenger):
 
@@ -36,7 +36,7 @@ class Flight:
             row = int(row_text)
         except:
             raise ValueError(f"Invalid seat row {row_text}")
-        
+
         if row not in rows:
             raise ValueError(f"Invalid row number {row}")
 
@@ -80,11 +80,12 @@ class Flight:
     def airline(self):
         return self._number[:2]
 
+
 def console_card_printer(passenger, seat, flight_number, aircraft):
-    output = f"| Name: {passenger}"         \
-             f"  Flight: {flight_number}"   \
-             f"  Seat: {seat}"              \
-             f"  Aircraft: {aircraft}"      \
+    output = f"| Name: {passenger}" \
+             f"  Flight: {flight_number}" \
+             f"  Seat: {seat}" \
+             f"  Aircraft: {aircraft}" \
              " |"
     banner = "+" + "-" * (len(output) - 2) + "+"
     border = "|" + " " * (len(output) - 2) + "|"
@@ -92,6 +93,7 @@ def console_card_printer(passenger, seat, flight_number, aircraft):
     card = "\n".join(lines)
     print(card)
     print()
+
 
 class Aircraft:
 
@@ -109,6 +111,7 @@ class Aircraft:
 
     def seating_plan(self):
         return (range(1, self._num_rows + 1), "ABCDEFGHIJK"[:self._num_seats_per_row])
+
 
 def make_flight():
     f = Flight("BA758", Aircraft("G-EUPT", "Airbus A319", num_rows=22, num_seats_per_row=6))
